@@ -1,0 +1,143 @@
+.javihidraulica
+	color white
+	section
+		&.section-green
+			.section-body
+				background-color #04AD61
+				
+		&.scrollable-section
+			display inline-block
+			padding 0
+			width 100%
+			height 100%
+			.section-body
+				padding 40px
+				height 100%
+				.section-titles
+					text-align left
+		.section-left
+			display block
+			float left
+			width 50%
+		.section-background
+			display block
+			width 100%
+			height 100%
+			animation none
+		.section-logo
+			width 200px
+			margin auto
+			img
+				margin auto
+header
+	&.javihidraulica
+		.header-content
+			padding 40px
+		.header-menu
+			background-color transparent
+			width auto
+			display none
+			right 0
+			transform translateX(0%)
+			&.on
+				background-color white
+				animation slideLeft .5s
+				display block
+				overflow auto
+			&.out
+				animation slideRightOut .5s
+				display block
+		nav
+			ul
+				font-size 50px
+				line-height 50px
+				text-transform uppercase
+				padding 0px
+				font-weight bold
+				li
+					&:nth-child(1)
+						a
+							color #09b2da
+					&:nth-child(2)
+						a
+							color #72CE00
+					&:nth-child(3)
+						a
+							color #C8B509
+					&:nth-child(4)
+						a
+							color #FE9100
+					a
+						display block
+						&:hover
+							background-color rgba(#00BC69,.9)
+		.button-nav
+			.header-ham
+				display inline-block
+				transform scale(.8)
+			span
+				text-transform uppercase
+				font-size 20px
+				bottom 13px
+				position relative
+				transition all .5s ease
+				font-weight bold
+		.header-search
+			font-size 25px
+			margin-bottom 40px
+			.fa
+				color #00bc69
+				&:before
+					padding-right 10px
+			.search
+				font-size 20px
+				text-transform uppercase
+				color #00bc69
+				font-family helvetica
+			input
+				border: none;
+				border-bottom: 1px solid #00bc69
+				border-radius: 0;
+				width 240px
+				display block
+				margin auto
+				font-size 20px
+				padding 5px
+				&:focus
+					border-bottom 1px solid #00bc69
+		.header-contact
+			text-align center
+			padding-top 30px
+			padding-bottom 30px
+			background light
+			bottom 0
+			width 100%
+			font-family helvetica
+			@media $break-sm
+				position absolute
+			
+			.header-contact-content
+				display inline-block
+				color #00bc69
+				.contact-button
+					padding 10px
+					font-size 30px
+					display inline-block
+					color white
+					background-color #00bc69
+					font-weight bold
+					text-transform uppercase
+					cursor pointer
+					margin-bottom 20px
+				.contact-description
+					text-align left
+					.fa
+						display block
+						float left
+						padding-right 10px
+				//.contact-description
+body
+	&.on
+		.button-nav
+			span
+				opacity 0

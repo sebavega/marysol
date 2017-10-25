@@ -1,0 +1,213 @@
+extends ../template.jade
+
+block page
+	section.section-main.section-dark.section-center#particles-js
+		#home
+		.slider
+			.slider-slides
+				.slide.slide-current
+					//.section-bg-video(data-youtube="1cIoxZ1iNlM" data-youtube-auto="bg")
+					.section-limit
+						.section-content-va.custom-particles-content
+							.section-content
+								h2.h1.section-title ¿Necesitas renovar la imagen de tu empresa?
+								p.section-subtitle Solicita una cotización
+		.section-buttons.custom-button-slide
+			.button.button-lg.button-line-white.wantmysite-button(href="#") quiero mi sitio
+
+
+
+
+	section.our-team.section-center
+		#nosotros
+		.limit
+			.our-team-content.section-code(data-name="Nosotros")
+				h2.section-title.dscroll Nuestro equipo
+				p.section-description: +lorem(15)
+				.team-container
+					article.article-team
+						.article-team-profile.content
+							.bg
+								+img(200,200)
+						.article-team-content
+							.team-profile Desarrollador Full Stack
+							.team-name Sebastian Vega
+							.team-socials
+								ul
+									li: a(href="https://www.linkedin.com/in/sebastian-vega-pena/" target="_blank").fa.fa-linkedin
+					article.article-team
+						.article-team-profile.content
+							.bg
+								+img(200,200)
+						.article-team-content
+							.team-profile Director de arte
+							.team-name Camilo Carrillo
+							.team-socials
+								ul
+									li: a(href="https://www.behance.net/camilodsgn/" target="_blank").fa.fa-behance
+
+
+	section.the-process.section-center
+		#como-lo-hacemos
+		.limit
+			.progress-container.section-code(data-name="Proceso")
+				h2.section-title.dscroll El proceso
+				p.section-description: +lorem(15)
+				article.article-progress
+					.progress-images
+						//+loop(20)
+							.progress-image.hide
+								//.lala
+									h4 hola
+									p askajs
+								+img(200,200)
+						.progress-image.hide
+							img(src="img/animation/1.png")
+						.progress-image.hide
+							img(src="img/animation/2.png")
+						.progress-image.hide
+							img(src="img/animation/3.png")
+						.progress-image.hide
+							img(src="img/animation/4.png")
+						.progress-image.hide
+							img(src="img/animation/5.png")
+						.progress-image.hide
+							img(src="img/animation/6.png")
+						.progress-image.hide
+							img(src="img/animation/7.png")
+						.progress-image.hide
+							img(src="img/animation/8.png")
+						.progress-image.hide
+							img(src="img/animation/9.png")
+						.progress-image.hide
+							img(src="img/animation/1.png")
+					.range-box
+						input(type="range" class="progress-bar" value="0" max="90")
+						//span(class="rval")
+	section.technologies.section-center
+		#tecnologias
+		.limit
+			.section-container.section-code(data-name="Tecnologias")
+				h2.section-title.dscroll Tecnologias
+				p.section-description: +lorem(15)
+				.technologies-container
+					
+					h3.technologies-title Backend
+					article.article-technology
+						.article-technology-image.bg.content
+							img(src="img/logos/wp.png")
+						.technology-description
+							.technology-title
+								h4.h3 Wordpress
+							.technology-text
+								p Wordpress es un CMS que permite que el contenido de tu sitio pueda ser administrado facilmente.
+								p Confia en el CMS que día a día gana una cuota más grande del mercado.
+					article.article-technology
+						.article-technology-image.bg.content
+							img(src="img/logos/mysql.png")
+						.technology-description
+							.technology-title
+								h4.h3 Mysql
+							.technology-text
+								p MySQL es una base de datos escalable de alto rendimiento para almacenar de manera segura y confiable todos los datos de su sitio.
+					article.article-technology
+						.article-technology-image.bg.content
+							img(src="img/logos/themosis.png")
+						.technology-description
+							.technology-title
+								h4.h3 Themosis
+							.technology-text
+								p Themosis es un framework que junto a Wordpress permite realizar desarrollos profesionales y escalables, ya que este permite realizar desarrollos con el modelo mvc.
+					article.article-technology
+						.article-technology-image.bg.content
+							img(src="img/logos/php.png")
+						.technology-description
+							.technology-title
+								h4.h3 Php
+							.technology-text
+								p PHP es el leguaje de programacion más usado para desarrollo web, por esto existe una gran cantidad de librerias que permiten en muy poco tiempo realizar desarollos del mayor nivel.
+
+
+					h3.technologies-title front-end
+					article.article-technology.article-orange
+						.article-technology-image.bg.content
+							img(src="img/logos/jquery.png")
+						.technology-description
+							.technology-title
+								h4.h3 Jquery
+							.technology-text
+								p: +lorem(15)
+					article.article-technology.article-orange
+						.article-technology-image.bg.content.article-technology-image--big.article-technology-image--color
+							img(src="img/logos/gulp.png")
+						.technology-description
+							.technology-title
+								h4.h3 Gulp
+							.technology-text
+								p: +lorem(15)
+					article.article-technology.article-orange
+						.article-technology-image.bg.content.article-technology-image--color
+							img(src="img/logos/stylus.png")
+						.technology-description
+							.technology-title
+								h4.h3 Stylus
+							.technology-text
+								p: +lorem(15)
+					article.article-technology.article-orange
+						.article-technology-image.bg.content
+							img(src="img/logos/angular.png")
+						.technology-description
+							.technology-title
+								h4.h3 Angular
+							.technology-text
+								p: +lorem(15)
+
+
+					h3.technologies-title Organizacion
+					article.article-technology.article-green
+						.article-technology-image.bg.content.article-technology-image--color
+							img(src="img/logos/bitbucket.png")
+						.technology-description
+							.technology-title
+								h4.h3 Bitbucket
+							.technology-text
+								p: +lorem(15)
+					article.article-technology.article-green
+						.article-technology-image.bg.content.article-technology-image--color
+							img(src="img/logos/trello.svg")
+						.technology-description
+							.technology-title
+								h4.h3 Trello
+							.technology-text
+								p: +lorem(15)
+					article.article-technology.article-green
+						.article-technology-image.bg.content.article-technology-image--color
+							img(src="img/logos/slack.svg")
+						.technology-description
+							.technology-title
+								h4.h3 Slack
+							.technology-text
+								p: +lorem(15)
+
+	.modal-container.mysite-modal
+		.modal-box
+			span.fa.fa-times.modal-close
+			.modal-content
+				h5 Solicita una cotzacion y te contactaremos a la brevedad.
+			form.controls.validate(method='POST', action='')
+				.cols
+					.col-md-12
+						.control-value
+							input(type="text" name="name" placeholder="Nombre")
+					.col-md-12
+						.control-value
+							input(type="email" name="email" placeholder="Email")
+					.col-md-12
+						.control-value
+							input(type="text" name="phone" placeholder="Teléfono")
+					.col-md-12
+						.control-value
+							textarea(name="message" placeholder="Mensaje")
+					.col-md-12
+						button.button.button-medium Enviar
+							span.fa.fa-angle-right

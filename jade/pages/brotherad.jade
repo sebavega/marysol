@@ -1,0 +1,151 @@
+extends ../template2.jade
+
+block page
+	section.section-main.section-brother.section-right.brother-slider
+		.slider
+			.slide.slide-current
+				.section-bg.bg 
+					img(src='http://escuelabrother.com/wp-content/uploads/2017/08/fondo-sin-limite.png')
+				.section-limit
+					.section-content-va
+						.section-content.content-white
+							h2.h1.section-title.dscroll La imagiación<br>no tiene limites,
+							p.big-subtitle.h1.dscroll Tus capacidades<br>tampoco
+	
+	section.section-content.section-white.section-left
+		.limit
+			.section-content
+				h2.section-title.h3.dscroll Programa
+				p.section-text.dscroll
+					.cols
+						.col-sm-12
+							p: +lorem(100)
+							p: +lorem(80)
+						//.col-sm-5
+							ul
+								+loop(10)
+									li: +lorem(8)
+
+	section.section-products
+		.limit
+			.section-content
+				article.article-product.dscroll
+					h3.article-title Postula
+					p.article-content: +lorem(50)
+					.modal-button(data-id='postular') Quiero postular!
+
+				article.article-product.dscroll
+					h3.article-title Mentor
+					p.article-content: +lorem(50)
+					.modal-button(data-id='mentor') Quiero ser mentor
+
+				article.article-product.dscroll
+					h3.article-title Donar
+					p.article-content: +lorem(50)
+					.modal-button(data-id='donar') Quiero Donar!!
+
+
+
+
+	.modal.modal-brother(data-id='postular')
+		.modal-light
+		.modal-box
+			.modal-inner
+				button.modal-close: i.fa.fa-times
+				h3.modal-title Formulario de postulación
+				.modalcontent
+					form.controls.validate
+						.control
+							.control-name Nombre
+							.control-value
+								input(type="text" name="name")
+						.control
+							.control-name Email
+							.control-value
+								input(type="email" name="email")
+						.control
+							.control-name Telefono
+							.control-value
+								input(type="text" name="phono")
+						.control
+							.control-name Curso
+							.control-value
+								select
+									option CM
+									option Youtuber
+									option Arte fotografico
+									option Creatividad
+						.control
+							.control-name Mensaje
+							.control-value
+								textarea(name="message")
+						.control-submit
+							button.button Postular
+	.modal.modal-brother(data-id='mentor')
+		.modal-light
+		.modal-box
+			.modal-inner
+				button.modal-close: i.fa.fa-times
+				h3.modal-title Mentor
+				.modalcontent
+					form.controls.validate
+						.control
+							.control-name Nombre
+							.control-value
+								input(type="text" name="name")
+						.control
+							.control-name Email
+							.control-value
+								input(type="email" name="email")
+						.control
+							.control-name Telefono
+							.control-value
+								input(type="text" name="phono")
+						.control
+							.control-name Curso
+							.control-value
+								select
+									option CM
+									option Youtuber
+									option Arte fotografico
+									option Creatividad
+						.control
+							.control-name Mensaje
+							.control-value
+								textarea(name="message")
+						.control-submit
+							button.button postular
+	.modal.modal-brother(data-id='donar')
+		.modal-light
+		.modal-box
+			.modal-inner
+				button.modal-close: i.fa.fa-times
+				h3.modal-title Donar
+				.modalcontent
+					form.controls.validate
+						.control
+							.control-name Nombre
+							.control-value
+								input(type="text" name="name")
+						.control
+							.control-name Email
+							.control-value
+								input(type="email" name="email")
+						.control
+							.control-name Telefono
+							.control-value
+								input(type="text" name="phono")
+						.control
+							.control-name Curso
+							.control-value
+								select
+									option CM
+									option Youtuber
+									option Arte fotografico
+									option Creatividad
+						.control
+							.control-name Mensaje
+							.control-value
+								textarea(name="message")
+						.control-submit
+							button.button Donar

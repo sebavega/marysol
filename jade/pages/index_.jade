@@ -1,0 +1,109 @@
+
+extends ../template.jade
+
+block pageVars
+	- PAGE_ID = 'index'
+
+block page
+
+	h1.none=BRAND 
+
+	section.section-main.section-dark.section-center#index
+		.section-bg-video(data-youtube="1cIoxZ1iNlM",data-youtube-auto="bg")
+		.section-limit
+			.section-content-va
+				+sectionContent('h1',true,false,'white')
+
+
+	// Section newsletter
+
+	section.section-newsletter.section-color#newsletter
+		.section-bg.bg(data-bg="uploads/"+Math.floor(Math.random()*9)+".jpg")
+		.section-limit
+			.section-content
+				h3.h2 ¿Quieres recibir nuestras mejores ofertas?
+				p.subtitle Suscribete y te mantendremos al día con nuestros mejores productos
+				form.controls.validate
+					.cols
+						.col-xs-6.col-md-4
+							+control("text","Nombre")(placeholder="Nombre...")
+						.col-xs-6.col-md-4
+							+control("email","Nombre")(placeholder="Email...")
+						.col-xs-4
+							button.button.button-dark.button-big.button-block
+								//span.fa.fa-paper-plane
+								|  Enviar
+
+
+	section.section-stats.section-center#services
+
+		.section-limit
+
+			.section-content
+				h2 Nuestros servicios
+			
+			.section-stats-nums
+				.cols
+					.col-sm-4
+						article.article-service
+							span.big
+								img(src="https://www.blobel.cl/gocart/themes/default/assets/img/logo.png")
+							p: +lorem(8)
+					.col-sm-4
+						article.article-service
+							span.big
+								img(src="https://www.blobel.cl/gocart/themes/default/assets/img/logo.png")
+							p: +lorem(8)
+					.col-sm-4
+						article.article-service
+							span.big
+								img(src="https://www.blobel.cl/gocart/themes/default/assets/img/logo.png") 
+							p: +lorem(8)
+
+	// Section people
+
+	section.section-people.section-center#nosotros
+		.section-limit
+
+			+sectionContent(true,true)
+
+			.section-articles
+				+articlePeople()
+				+articlePeople()
+
+		// Section map
+
+	section.section-map#map
+
+		.section-limit
+			.section-map-box
+				h3: +lorem(3) 
+				ul
+					li
+						span.fa.fa-home
+						| Avenida del Parque 4161, oficina 103, Ciudad Empresarial
+					li
+						a(href='tel:+56223935367')
+							span.fa.fa-phone
+							| +(56) 2 2393 5367
+					li
+						a(href='mailto:contacto@adsgdfg.com')
+							span.fa.fa-envelope
+							| contacto@adsgdfg.com
+
+		.section-map.map(data-zoom='14', data-lat='-33.4585000', data-lng='-70.649371')
+			.map-marker(data-lat='-33.4585000', data-lng='-70.629371')
+
+
+
+	// Section logos
+
+	section.section-logos#clientes
+		.section-limit
+			h3 Nos apoyan
+			a(href="#"): img(src="https://www.blobel.cl/gocart/themes/default/assets/img/logo.png")
+			a(href="#"): img(src="https://www.blobel.cl/gocart/themes/default/assets/img/logo.png")
+			a(href="#"): img(src="https://www.blobel.cl/gocart/themes/default/assets/img/logo.png")
+			a(href="#"): img(src="https://www.blobel.cl/gocart/themes/default/assets/img/logo.png")
+			a(href="#"): img(src="https://www.blobel.cl/gocart/themes/default/assets/img/logo.png")
+			a(href="#"): img(src="https://www.blobel.cl/gocart/themes/default/assets/img/logo.png")

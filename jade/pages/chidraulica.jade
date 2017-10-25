@@ -1,0 +1,34 @@
+extends ../template4.jade
+
+block page
+	section.section-main.section-dark
+		.slider
+			.slider-slides
+				.slide.slide-current
+					.section-bg-video(data-youtube="1cIoxZ1iNlM" data-youtube-auto="bg")
+					.section-limit
+						.section-content-va.custom-particles-content
+							.section-content
+								h2.h1.section-title Expertos en <strong>Oleo-hidráulica</strong>
+				.slide
+					.section-slide.bg.content
+						img(src="http://lorempixel.com/400/200")
+					.section-limit
+						.section-content-va.custom-particles-content
+							.section-content
+								h2.h1.section-title Expertos en Oleo-hidráulica
+	section.section-about-us
+		.cols
+			.col-md-4.titles
+				.section-titles
+					h2.section-title.h3.button-title Quienes somos
+					span.vertical-align
+					h3.section-subtitle.h1
+						strong 37 años<br>
+						| de experiencia<br>
+						| en Hidráulica<br>
+			.col-md-8.content
+				.section-content
+					p: +lorem(80)
+					p: +lorem(80)
+					p: +lorem(40)
