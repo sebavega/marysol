@@ -7,7 +7,6 @@ livereload   = require("gulp-livereload")
 include      = require("gulp-include")
 prefix       = require("gulp-autoprefixer")
 concat       = require("gulp-concat")
-jade         = require("gulp-jade")
 addsrc       = require("gulp-add-src")
 uglify       = require("gulp-uglify")
 csso         = require("gulp-csso")
@@ -18,16 +17,9 @@ changed      = require("gulp-changed")
 
 path_dev     = "front-dev"
 path_dist    = "front-dist"
-path_distmin = "htdocs/content/themes/BaseTheme/dist"
+
 
 files =
-
-	jade:
-		watch:          path_dev + "/jade/pages/*.jade"
-		watchall:       path_dev + "/jade/**/*.jade"
-		src:            path_dev + "/jade/pages/*.jade"
-		destDist:       path_dist
-		destDistMin:    path_distmin
 
 	stylus:
 		watch:          path_dev + "/stylus/**/*.styl"
@@ -57,8 +49,6 @@ gulp.task "default", ->
 	livereload.listen()
 	gulp.watch(path_dist + "/css/*.css").on "change", livereload.changed
 
-	gulp.watch files.jade.watch,        [ "build:html" ]
-	gulp.watch files.jade.watchall,     [ "build:html-all" ]
 	gulp.watch files.stylus.watch,      [ "build:css" ]
 	gulp.watch files.coffee.watch,      [ "build:js" ]
 	gulp.watch files.images.watch,      [ "build:images" ]
@@ -67,24 +57,11 @@ gulp.task "default", ->
 
 
 gulp.task 'build', [
-	'build:html-all'
 	'build:js'
 	'build:css'
 	'build:images'
 ]
 
-gulp.task "build:html", ->
-	gulp.src(files.jade.src)
-		.pipe(changed(path_dev,extension: ".html"))
-		.pipe(jade(pretty: true))
-		.pipe(gulp.dest(files.jade.destDist))
-	return
-
-gulp.task "build:html-all", ->
-	gulp.src(files.jade.src)
-		.pipe(jade(pretty: true))
-		.pipe(gulp.dest(files.jade.destDist))
-	return
 
 gulp.task "build:css", ->
 	gulp.src(files.stylus.src)
