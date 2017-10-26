@@ -14,15 +14,26 @@
 
     
     <header>
-        <div class="brand">Brand</div>
-        <div class="menu">
-            <nav>
-                <ul>
-                    <li><a href="{{ route('home') }}">Inicio</a></li>
-                    <li><a href="{{ route('about') }}">Acerca</a></li>
-                    <li><a href="{{ route('contact') }}">Contacto</a></li>                    
-                </ul>
-            </nav>
+        <div class="limit">
+            <div class="header-content">
+                <div class="header-logo">
+                    <a href="{{ route('home') }}">Marysol Propiedades</a>
+                </div>
+                <div class="header-hamburguer">
+                    <div class="fa1"></div>
+                    <div class="fa2"></div>
+                    <div class="fa3"></div>
+                </div>
+                <nav>
+                    <div class="fa fa-times"></div>
+                    <ul>
+                        <li><a href="{{ route('home') }}">Inicio</a></li>
+                        <li><a href="{{ route('about') }}">Acerca</a></li>
+                        <li><a href="{{ route('contact') }}">Contacto</a></li>                        
+                    </ul>
+                </nav>
+            </div>
+
         </div>
     </header>
     
