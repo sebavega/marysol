@@ -1,19 +1,101 @@
-.menu 
+header
     width 100%
-    background-color red
-
-    li
-        float right 
-        display inline-block
-        font-size 1em
-
-        a
+    background color
+    position fixed
+    z-index 2
+    top 0
+    .header-logo
+        z-index 1
+        position relative
+        padding 6px 20px
+        display block
+        float left
+        img
+            width 140px
+    .header-hamburger
+        padding 5px 20px
+        display block
+        float right
+        text-align right
+        width 55px
+        cursor pointer
+        margin-top 4px
+        div
+            background white
+            height 5px
             display block
-            margin-right 50px
-            padding 10px 30px
-            
-.brand
-    float left
-    display block
-    font-size 2em
-    margin-left 80px
+            float right
+            margin-bottom 6px
+            &.fa1
+                width 48px
+            &.fa2
+                width 38px
+            &.fa3
+                width 28px
+    nav
+        height 100%
+        position fixed
+        right -190px
+        padding 20px
+        background $orange
+        transition ease-in-out .5s
+        padding-top 70px
+        &.active
+            right 0
+            opacity 1
+        .fa.fa-times
+            color white
+            font-size 30px
+            position absolute
+            right 10px
+            top 10px
+            cursor pointer
+        ul
+            list-style none
+            color white
+            font-size 25px
+            li
+                border-bottom 1px solid white
+                padding-bottom 10px
+                margin-bottom 40px
+                a
+                    text-decoration none
+                    color white
+    @media $break-md
+        .header-hamburger
+            display none
+            div
+                display none
+        nav
+            position relative
+            text-align right
+            height initial
+            padding 0
+            right 0
+            background $orange
+            padding-top 0
+            &.active
+            rigth auto
+            .fa.fa-times
+                display none
+            ul
+                font-size 20px
+                li
+                    display inline-block
+                    border-bottom 0px solid white
+                    padding-bottom 0px
+                    margin-bottom 0px
+                    a
+                        display inline-block
+                        padding 12px 20px
+    @media (min-width: 1060px)
+        .header-logo
+            padding 6px 0
+        .header-hamburger
+            padding 10px 0
+        nav
+            ul
+                li
+                    &:last-child
+                        a
+                            padding-right 0

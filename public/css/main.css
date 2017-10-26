@@ -2076,25 +2076,138 @@ input::-webkit-inner-spin-button {
   width: 100%;
   height: 100%;
 }
-.menu {
+.slider {
+  position: relative;
+}
+.search-box {
+  position: absolute;
+  z-index: 1;
   width: 100%;
-  background-color: #d00;
+  top: 0;
+  padding-top: 13%;
 }
-.menu li {
-  float: right;
-  display: inline-block;
-  font-size: 1em;
+header {
+  width: 100%;
+  background: #6bc5d2;
+  position: fixed;
+  z-index: 2;
+  top: 0;
 }
-.menu li a {
+header .header-logo {
+  z-index: 1;
+  position: relative;
+  padding: 6px 20px;
   display: block;
-  margin-right: 50px;
-  padding: 10px 30px;
-}
-.brand {
   float: left;
+}
+header .header-logo img {
+  width: 140px;
+}
+header .header-hamburger {
+  padding: 5px 20px;
   display: block;
-  font-size: 2em;
-  margin-left: 80px;
+  float: right;
+  text-align: right;
+  width: 55px;
+  cursor: pointer;
+  margin-top: 4px;
+}
+header .header-hamburger div {
+  background: #fff;
+  height: 5px;
+  display: block;
+  float: right;
+  margin-bottom: 6px;
+}
+header .header-hamburger div.fa1 {
+  width: 48px;
+}
+header .header-hamburger div.fa2 {
+  width: 38px;
+}
+header .header-hamburger div.fa3 {
+  width: 28px;
+}
+header nav {
+  height: 100%;
+  position: fixed;
+  right: -190px;
+  padding: 20px;
+  background: $orange;
+  transition: ease-in-out 0.5s;
+  padding-top: 70px;
+}
+header nav.active {
+  right: 0;
+  opacity: 1;
+}
+header nav .fa.fa-times {
+  color: #fff;
+  font-size: 30px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+header nav ul {
+  list-style: none;
+  color: #fff;
+  font-size: 25px;
+}
+header nav ul li {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+}
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+@media (min-width: 720px) {
+  header .header-hamburger {
+    display: none;
+  }
+  header .header-hamburger div {
+    display: none;
+  }
+  header nav {
+    position: relative;
+    text-align: right;
+    height: initial;
+    padding: 0;
+    right: 0;
+    background: $orange;
+    padding-top: 0;
+  }
+  header nav.active,
+  header nav rigth auto,
+  header nav .fa.fa-times {
+    display: none;
+  }
+  header nav ul {
+    font-size: 20px;
+  }
+  header nav ul li {
+    display: inline-block;
+    border-bottom: 0px solid #fff;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+  header nav ul li a {
+    display: inline-block;
+    padding: 12px 20px;
+  }
+}
+@media (min-width: 1060px) {
+  header .header-logo {
+    padding: 6px 0;
+  }
+  header .header-hamburger {
+    padding: 10px 0;
+  }
+  header nav ul li:last-child a {
+    padding-right: 0;
+  }
 }
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
