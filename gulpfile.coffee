@@ -86,7 +86,3 @@ gulp.task "build:images", ->
 		.pipe(imagemin( progressive: true, use: [ pngquant(quality: "70-80") ] ))
 		.pipe(gulp.dest(files.images.destDist))
 	return
-
-
-
-
