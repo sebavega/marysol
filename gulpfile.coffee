@@ -16,7 +16,7 @@ changed      = require("gulp-changed")
 
 
 path_dev     = "front-dev"
-path_dist    = "front-dist"
+path_dist    = "public"
 
 
 files =
@@ -26,7 +26,6 @@ files =
 		src:            path_dev + "/stylus/main*.styl"
 		modules:        require('./modules.coffee')(path_dev+"/stylus/coreModules", "styl")
 		destDist:       path_dist + "/css"
-		destDistMin:    path_distmin + "/css"
 
 	coffee:
 		watch:          path_dev + "/coffee/**/*.coffee"
@@ -35,13 +34,11 @@ files =
 		modulesCustom:  path_dev + "/coffee/customModules/*.coffee"
 		plugins:        require('./modules.coffee')("plugins")
 		destDist:       path_dist + "/js"
-		destDistMin:    path_distmin + "/js"
 
 	images:
 		watch:          path_dev + "/img/**/*"
 		src:            path_dev + "/img/**/*"
 		destDist:       path_dist + "/img"
-		destDistMin:    path_distmin + "/img"
 
 
 gulp.task "default", ->
@@ -70,8 +67,6 @@ gulp.task "build:css", ->
 		.pipe(stylus({'include css': true}))
 		.pipe(prefix())
 		.pipe(gulp.dest(files.stylus.destDist))
-		.pipe(csso())
-		.pipe(gulp.dest(files.stylus.destDistMin))
 	return
 
 gulp.task "build:js", ->
@@ -83,8 +78,6 @@ gulp.task "build:js", ->
 		.pipe(addsrc.prepend(files.coffee.plugins))
 		.pipe(concat("main.js"))
 		.pipe(gulp.dest(files.coffee.destDist))
-		.pipe(uglify())
-		.pipe(gulp.dest(files.coffee.destDistMin))
 	return
 
 gulp.task "build:images", ->
@@ -92,7 +85,6 @@ gulp.task "build:images", ->
 		.pipe(changed(path_dev,extension: ".jpg|.png|.gif"))
 		.pipe(imagemin( progressive: true, use: [ pngquant(quality: "70-80") ] ))
 		.pipe(gulp.dest(files.images.destDist))
-		.pipe(gulp.dest(files.images.destDistMin))
 	return
 
 
