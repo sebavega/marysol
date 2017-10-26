@@ -11,18 +11,18 @@
 |
 */
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
 Route::get('/about', function () {
-    return view('welcome');
+    return view('about');
 })->name('about');
 
 Route::get('/contact', function () {
-    return view('welcome');
+    return view('contact');
 })->name('contact');
 
-Route::get('/s', function () {
-    return view('welcome');
-})->name('s');
+Route::get('/search', function () {
+    return view('search');
+})->name('search');
