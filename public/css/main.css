@@ -2076,6 +2076,26 @@ input::-webkit-inner-spin-button {
   width: 100%;
   height: 100%;
 }
+.menu {
+  width: 100%;
+  background-color: #d00;
+}
+.menu li {
+  float: right;
+  display: inline-block;
+  font-size: 1em;
+}
+.menu li a {
+  display: block;
+  margin-right: 50px;
+  padding: 10px 30px;
+}
+.brand {
+  float: left;
+  display: block;
+  font-size: 2em;
+  margin-left: 80px;
+}
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
