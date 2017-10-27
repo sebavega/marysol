@@ -15,7 +15,6 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->increments('id')->unique()->primary();
-            
             $table->date('fecha');
             $table->integer('bano');
             $table->integer('dormitorio');
@@ -25,7 +24,6 @@ class CreatePostsTable extends Migration
             $table->float('valor', 5, 2);
             $table->string('tipo', 12);
             $table->string('negocio', 8);
-            $table->float('valor', 5, 2);
             $table->text('descripcion');
             $table->boolean('estado');
 

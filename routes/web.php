@@ -19,10 +19,15 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
 
-Route::get('/search', function () {
-    return view('search');
-})->name('search');
+Route::prefix('contact')->group(function(){
+    Route::get('/', 'MailController@home')->name('contact'); //add auth mw
+    Route::get('/delete/{id}', 'MailController@delete')->name('delete')->where('id', '[0-9]+'); //add auth mw
+    Route::post('/', 'MailController@send')->name('send');
+});
+
+Route::prefix('posts')->group(function(){
+    Route::get('/search/{type?}/{bussiness?}/', 'PostController@search')->name('search');
+    Route::get('/search/{id}', 'PostController@find')->name('find-post')->where('id', '[0-9]+');
+    Route::post('/new', 'PostController@new')->name('new-post'); //add auth mw
+});
