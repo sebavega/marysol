@@ -14,8 +14,8 @@ class CreateImagesTable extends Migration
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
-            $table->increments('id')->unique()->primary();
-            $table->integer('post_id');
+            $table->increments('id');
+            $table->integer('post_id')->unsigned();
             $table->boolean('main')->default('0');
             $table->string('ruta');
             $table->text('descripcion');
