@@ -60,9 +60,8 @@ class Post extends Model
             return $post::all()->where(
                 ['tipo', $request['property']],
                 ['negocio', $request['bussiness']]
-            )->get();
-        }
-        
+            );
+        }        
     }
 
     public function images()
